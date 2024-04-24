@@ -1,0 +1,16 @@
+version: "3"
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+  database:
+    image: mongo
+    environment:
+      MONGO_ROOT_PASSWORD: my-secret-pw
+    ports:
+      - "27017:27017"
